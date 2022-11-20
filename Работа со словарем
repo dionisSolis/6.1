@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+
+namespace qwerty
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Dictionary<string, string> words = new Dictionary<string, string>();
+            string wordToFind;
+
+            words.Add("кот", "Cat");
+            words.Add("собака", "Dog");
+            words.Add("шкаф", "Wardrobe");
+            words.Add("университет", "Universitet");
+            Console.WriteLine("Выберите слово для перевода\n");
+
+            foreach (var word in words)
+            {
+                Console.WriteLine(word.Key);
+            }
+
+            Console.Write("\nВвод...");
+            wordToFind = Console.ReadLine().ToLower();
+
+            if (words.ContainsKey(wordToFind))
+            {
+                Console.WriteLine($"\nЕго перевод - {words[wordToFind]}");
+            }
+            else
+            {
+                Console.WriteLine("\nТакого слова нет в словаре");
+            }
+        }
+    }
+}
